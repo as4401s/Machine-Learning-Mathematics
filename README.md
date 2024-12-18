@@ -1,3 +1,4 @@
+
 # Machine Learning Mathematics
 
 This repository contains a collection of Jupyter notebooks that cover fundamental mathematical concepts essential for machine learning. Each notebook focuses on a specific topic, providing explanations, formulas, and examples to aid understanding.
@@ -55,70 +56,70 @@ This repository contains a collection of Jupyter notebooks that cover fundamenta
 17. **Determinants and Eigenvalues**  
     Investigating the relationship between determinants and eigenvalues in matrix analysis.
 
-## Formulas
+## Formulas with NumPy Implementations
 
-Throughout the notebooks, several key formulas are presented. Here are some of the fundamental ones:
+Throughout the notebooks, several key formulas are presented. Here are some of the fundamental ones along with their NumPy implementations:
 
 - **Dot Product**  
-  The dot product of two vectors **a** and **b** is calculated as:
+  The dot product of two vectors **a** and **b** can be computed using NumPy's `dot` function:
 
-  \[
-  \mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^{n} a_i b_i
-  \]
+  ```python
+  import numpy as np
 
-- **Frobenius Norm**  
-  The Frobenius norm of a matrix **A** is defined as:
+  a = np.array([1, 2, 3])
+  b = np.array([4, 5, 6])
+  dot_product = np.dot(a, b)
 
-  \[
-  \|A\|_F = \sqrt{\sum_{i=1}^{m} \sum_{j=1}^{n} |a_{ij}|^2}
-  \]
+Frobenius Norm
+The Frobenius norm of a matrix A is calculated using numpy.linalg.norm:
 
-- **Matrix Multiplication**  
-  The product of matrices **A** (of size *m*×*n*) and **B** (of size *n*×*p*) results in matrix **C** (of size *m*×*p*), where each element is computed as:
 
-  \[
-  c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}
-  \]
+import numpy as np
 
-- **Matrix Inversion**  
-  The inverse of a matrix **A** is denoted as **A⁻¹** and satisfies:
+A = np.array([[1, 2], [3, 4]])
+frobenius_norm = np.linalg.norm(A, 'fro')
 
-  \[
-  A \cdot A^{-1} = I
-  \]
+Matrix Multiplication
+Matrix multiplication of A and B can be performed using the @ operator or numpy.matmul:
 
-  where **I** is the identity matrix.
 
-- **Eigenvalue Equation**  
-  For a square matrix **A**, a scalar λ is an eigenvalue, and a non-zero vector **v** is the corresponding eigenvector if:
+import numpy as np
 
-  \[
-  A \mathbf{v} = \lambda \mathbf{v}
-  \]
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+product = A @ B  # or np.matmul(A, B)
 
-- **Determinant of a 2×2 Matrix**  
-  For matrix **A**:
+Matrix Inversion
+The inverse of a matrix A is computed using numpy.linalg.inv:
 
-  \[
-  A = \begin{bmatrix}
-  a & b \\
-  c & d
-  \end{bmatrix}
-  \]
+import numpy as np
 
-  the determinant is calculated as:
+A = np.array([[1, 2], [3, 4]])
+inverse_A = np.linalg.inv(A)
 
-  \[
-  \text{det}(A) = ad - bc
-  \]
+Eigenvalue Equation
+Eigenvalues and eigenvectors of a square matrix A are obtained using numpy.linalg.eig:
 
-For detailed explanations and additional formulas, please refer to the individual notebooks in this repository.
+import numpy as np
 
-## Usage
+A = np.array([[4, 2], [1, 3]])
+eigenvalues, eigenvectors = np.linalg.eig(A)
 
-To explore these concepts:
+Determinant of a Matrix
+The determinant of a matrix A is calculated using numpy.linalg.det:
 
-1. Clone the repository:
+import numpy as np
 
-   ```bash
-   git clone https://github.com/as4401s/Machine-Learning-Mathematics.git
+A = np.array([[1, 2], [3, 4]])
+determinant = np.linalg.det(A)
+
+Singular Value Decomposition (SVD)
+The Singular Value Decomposition of a matrix A is performed using numpy.linalg.svd:
+
+import numpy as np
+
+A = np.array([[1, 2], [3, 4], [5, 6]])
+U, D, Vt = np.linalg.svd(A, full_matrices=False)
+Here, U and Vt are orthogonal matrices, and D is a vector containing the singular values. To construct the diagonal matrix D:
+
+D_matrix = np.diag(D)
