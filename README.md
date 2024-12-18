@@ -92,7 +92,7 @@ Throughout the notebooks, several key formulas are presented. Here are some of t
 
 
 - **Matrix Inversion**
-   The inverse of a matrix 'A' is computed using 'numpy.linalg.inv':
+   The inverse of a matrix `A` is computed using `numpy.linalg.inv`:
 
    ```python
    import numpy as np
@@ -101,7 +101,7 @@ Throughout the notebooks, several key formulas are presented. Here are some of t
    inverse_A = np.linalg.inv(A)
 
 - **Eigenvalue Equation**
-   Eigenvalues and eigenvectors of a square matrix A are obtained using numpy.linalg.eig:
+   Eigenvalues and eigenvectors of a square matrix `A` are obtained using `numpy.linalg.eig`:
 
    ```python
    import numpy as np
@@ -110,7 +110,7 @@ Throughout the notebooks, several key formulas are presented. Here are some of t
    eigenvalues, eigenvectors = np.linalg.eig(A)
 
 - **Determinant of a Matrix**
-   The determinant of a matrix A is calculated using numpy.linalg.det:
+   The determinant of a matrix `A` is calculated using `numpy.linalg.det`:
 
    ```python
    import numpy as np
@@ -119,7 +119,7 @@ Throughout the notebooks, several key formulas are presented. Here are some of t
    determinant = np.linalg.det(A)
 
 - **Singular Value Decomposition (SVD)**
-   The Singular Value Decomposition of a matrix A is performed using numpy.linalg.svd:
+   The Singular Value Decomposition of a matrix `A` is performed using `numpy.linalg.svd`:
 
    ```python
    import numpy as np
@@ -127,6 +127,6 @@ Throughout the notebooks, several key formulas are presented. Here are some of t
    A = np.array([[1, 2], [3, 4], [5, 6]])
    U, D, Vt = np.linalg.svd(A, full_matrices=False)
 
-Here, U and Vt are orthogonal matrices, and D is a vector containing the singular values. To construct the diagonal matrix D:
+Here, `U` and `Vt` are orthogonal matrices, and `D` is a vector containing the singular values. To construct the diagonal matrix `D`:
 
-   D_matrix = np.diag(D)
+   `D_matrix = np.diag(D)`
