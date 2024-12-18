@@ -70,56 +70,63 @@ Throughout the notebooks, several key formulas are presented. Here are some of t
   b = np.array([4, 5, 6])
   dot_product = np.dot(a, b)
 
-Frobenius Norm
-The Frobenius norm of a matrix A is calculated using numpy.linalg.norm:
+- **Frobenius Norm**  
+  The Frobenius norm of a matrix `A` is computed using `numpy.linalg.norm`:
+
+  ```python
+  import numpy as np
+
+  A = np.array([[1, 2], [3, 4]])
+  frobenius_norm = np.linalg.norm(A, 'fro')
+
+- **Matrix Multiplication**
+
+   Matrix multiplication of `A` and `B` can be performed using the `@` operator or `numpy.matmul`:
+
+   ```python
+   import numpy as np
+
+   A = np.array([[1, 2], [3, 4]])
+   B = np.array([[5, 6], [7, 8]])
+   product = A @ B  # or np.matmul(A, B)
 
 
-import numpy as np
+- **Matrix Inversion**
+   The inverse of a matrix 'A' is computed using 'numpy.linalg.inv':
 
-A = np.array([[1, 2], [3, 4]])
-frobenius_norm = np.linalg.norm(A, 'fro')
+   ```python
+   import numpy as np
 
-Matrix Multiplication
-Matrix multiplication of A and B can be performed using the @ operator or numpy.matmul:
+   A = np.array([[1, 2], [3, 4]])
+   inverse_A = np.linalg.inv(A)
 
+- **Eigenvalue Equation**
+   Eigenvalues and eigenvectors of a square matrix A are obtained using numpy.linalg.eig:
 
-import numpy as np
+   ```python
+   import numpy as np
 
-A = np.array([[1, 2], [3, 4]])
-B = np.array([[5, 6], [7, 8]])
-product = A @ B  # or np.matmul(A, B)
+   A = np.array([[4, 2], [1, 3]])
+   eigenvalues, eigenvectors = np.linalg.eig(A)
 
-Matrix Inversion
-The inverse of a matrix A is computed using numpy.linalg.inv:
+- **Determinant of a Matrix**
+   The determinant of a matrix A is calculated using numpy.linalg.det:
 
-import numpy as np
+   ```python
+   import numpy as np
 
-A = np.array([[1, 2], [3, 4]])
-inverse_A = np.linalg.inv(A)
+   A = np.array([[1, 2], [3, 4]])
+   determinant = np.linalg.det(A)
 
-Eigenvalue Equation
-Eigenvalues and eigenvectors of a square matrix A are obtained using numpy.linalg.eig:
+- **Singular Value Decomposition (SVD)**
+   The Singular Value Decomposition of a matrix A is performed using numpy.linalg.svd:
 
-import numpy as np
+   ```python
+   import numpy as np
 
-A = np.array([[4, 2], [1, 3]])
-eigenvalues, eigenvectors = np.linalg.eig(A)
+   A = np.array([[1, 2], [3, 4], [5, 6]])
+   U, D, Vt = np.linalg.svd(A, full_matrices=False)
 
-Determinant of a Matrix
-The determinant of a matrix A is calculated using numpy.linalg.det:
-
-import numpy as np
-
-A = np.array([[1, 2], [3, 4]])
-determinant = np.linalg.det(A)
-
-Singular Value Decomposition (SVD)
-The Singular Value Decomposition of a matrix A is performed using numpy.linalg.svd:
-
-import numpy as np
-
-A = np.array([[1, 2], [3, 4], [5, 6]])
-U, D, Vt = np.linalg.svd(A, full_matrices=False)
 Here, U and Vt are orthogonal matrices, and D is a vector containing the singular values. To construct the diagonal matrix D:
 
-D_matrix = np.diag(D)
+   D_matrix = np.diag(D)
